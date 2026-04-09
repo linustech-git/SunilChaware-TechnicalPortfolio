@@ -18,32 +18,40 @@ const toc = [
 >
   <section id="intro" class="glass-card p-7 md:p-10">
     <h1 class="max-w-4xl text-3xl font-semibold leading-tight text-zinc-100 md:text-[2.85rem]">Who am I?</h1>
-    <p class="mt-5 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+    <p class="mt-5 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]" style="text-align: justify;">
       I am Sunil Chaware. I am a Senior Developer and technical leader who believes that great products are built where
       robust architecture meets an uncompromising developer experience. My career has been spent leading teams and
       shipping systems that solve real-world problems with pragmatic, high-performance code.
     </p>
-    <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]" style="text-align: justify;">
       I lead with a "tech-first" mindset-balancing the macro-view of leadership with the micro-precision of a builder.
       This space is my technical whitepaper: a transparent look at my decision-making process, the trade-offs I navigate
       under real-world constraints, and the evolution of my current primary project, Numerinus.
     </p>
-    <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]" style="text-align: justify;">
       Over the years, I have worked across EdTech, finance, and enterprise platforms, with a strong focus on system
       reliability, performance tuning, and secure product delivery. I care about outcomes, not just implementation:
       shipping software that is maintainable, trusted by teams, and useful in the real world.
     </p>
-    <div class="mt-8 flex flex-wrap gap-2.5">
-      <Button href="/workspace" label="Explore Workspace" />
-      <Button href="/Sunil-Chaware-CV.pdf" label="Download CV" variant="ghost" newTab={true} />
+    <div class="mt-8 flex flex-nowrap gap-2.5 overflow-x-auto pb-1">
+      <Button href="/workspace" label="Workspace" className="w-40" />
+      <Button href="/Sunil-Chaware-CV.pdf" label="Download CV" variant="ghost" newTab={true} className="w-40" icon="download" />
       <Button
         href="https://www.linkedin.com/in/sunil-chaware-9035a646/"
         label="LinkedIn"
         variant="ghost"
         newTab={true}
         icon="linkedin"
+        className="w-40"
       />
-      <Button href="https://github.com/linustech-git" label="GitHub" variant="ghost" newTab={true} icon="github" />
+      <Button
+        href="https://github.com/linustech-git"
+        label="GitHub"
+        variant="ghost"
+        newTab={true}
+        icon="github"
+        className="w-40"
+      />
     </div>
     <div class="terminal-window mt-9 max-w-2xl">
       <p class="typing-line">$ building --now "Numerinus: .NET math library + storefront"</p>

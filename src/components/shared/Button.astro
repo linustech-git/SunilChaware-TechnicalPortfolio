@@ -4,10 +4,11 @@ interface Props {
   label: string;
   variant?: "primary" | "ghost";
   newTab?: boolean;
-  icon?: "linkedin" | "github" | "medium";
+  icon?: "linkedin" | "github" | "medium" | "download";
+  className?: string;
 }
 
-const { href, label, variant = "primary", newTab = false, icon } = Astro.props as Props;
+const { href, label, variant = "primary", newTab = false, icon, className = "" } = Astro.props as Props;
 
 const variants = {
   primary: "bg-cyan-400 text-slate-950 hover:bg-cyan-300",
@@ -19,7 +20,7 @@ const variants = {
   href={href}
   target={newTab ? "_blank" : undefined}
   rel={newTab ? "noreferrer" : undefined}
-  class={`inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold transition ${variants[variant]}`}
+  class={`inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold transition ${variants[variant]} ${className}`}
 >
   <span>{label}</span>
   {
@@ -40,6 +41,13 @@ const variants = {
     icon === "medium" && (
       <svg class="ml-2 h-4 w-4 text-[#00AB6C]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M4.2 6.8a.7.7 0 00-.2-.9L2.6 4.2V4h5.2l4 8.7L15.3 4h5v.2l-1.2 1.1a.4.4 0 00-.2.4v12.6a.4.4 0 00.2.4l1.2 1.1v.2h-6.1v-.2l1.2-1.1c.1-.1.1-.2.1-.4V8.1l-4.4 11.8h-.6L5.4 8.1v8.6a1 1 0 00.3.8l1.6 1.9v.2H3v-.2l1.6-1.9a1 1 0 00.3-.8V7.2z"></path>
+      </svg>
+    )
+  }
+  {
+    icon === "download" && (
+      <svg class="ml-2 h-4 w-4 text-cyan-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 4v10m0 0l4-4m-4 4l-4-4M5 18h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     )
   }

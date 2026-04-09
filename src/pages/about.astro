@@ -18,7 +18,7 @@ const toc = [
     <h1 class="text-2xl font-semibold leading-tight text-zinc-100 md:text-[2.35rem]">
       I build products where deep engineering meets practical value.
     </h1>
-    <div class="mt-6 max-w-2xl space-y-5 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+    <div class="mt-6 max-w-2xl space-y-5 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]" style="text-align: justify;">
       <p>
         I am Sunil, an engineer who enjoys turning complex ideas into useful products. I like technology not only for
         what it can do, but for what it can simplify. Right now, I am building Numerinus, a .NET math library, and a
@@ -44,28 +44,31 @@ const toc = [
         execute practically, and keep the product experience as strong as the technical foundation behind it.
       </p>
     </div>
-    <div class="mt-8 flex flex-wrap gap-2.5">
-      <Button href="/Sunil-Chaware-CV.pdf" label="Download CV" variant="ghost" newTab={true} />
+    <div class="mt-8 flex flex-nowrap gap-2.5 overflow-x-auto pb-1">
+      <Button href="/Sunil-Chaware-CV.pdf" label="Download CV" variant="ghost" newTab={true} className="w-40" icon="download" />
       <Button
         href="https://www.linkedin.com/in/sunil-chaware-9035a646/"
-        label="LinkedIn Profile"
+        label="LinkedIn"
         variant="ghost"
         newTab={true}
         icon="linkedin"
+        className="w-40"
       />
       <Button
         href="https://github.com/linustech-git"
-        label="GitHub Profile"
+        label="GitHub"
         variant="ghost"
         newTab={true}
         icon="github"
+        className="w-40"
       />
       <Button
         href="https://medium.com/@linustech"
-        label="Medium Articles"
+        label="Medium"
         variant="ghost"
         newTab={true}
         icon="medium"
+        className="w-40"
       />
     </div>
   </section>
