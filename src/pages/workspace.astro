@@ -34,27 +34,36 @@ const toc = [
           title="Numerinus Store"
           description="A commercial platform for production-grade .NET numerical computing packages."
         >
-          <p class="text-sm leading-relaxed text-zinc-400">
-            A focused marketplace where .NET teams can evaluate, license, and adopt high-performance numerical packages.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
-            <li>
-              <span class="text-zinc-300">Packages:</span> <span class="font-mono text-zinc-300">Core</span>,
-              <span class="font-mono text-zinc-300"> Algebra</span>,
-              <span class="font-mono text-zinc-300"> Geometry</span>,
-              <span class="font-mono text-zinc-300"> UnitConversion</span>
-              <span class="text-zinc-500"> (+ Statistics and Calculus planned)</span>
-            </li>
-            <li>
-              <span class="text-zinc-300">Capabilities:</span> versioned release notes, seat-based licensing, activation
-              management, docs, pricing, blog, and a live math playground.
-            </li>
-            <li>
-              <span class="text-zinc-300">Stack:</span> .NET 9, ASP.NET Core, PostgreSQL, React 19, TypeScript, Vite,
-              Tailwind v4, TanStack Query, OAuth/JWT, OpenAI assistant, Serilog, and Application Insights.
-            </li>
-          </ul>
-          <p class="mt-3 font-mono text-xs text-zinc-500">Status: Active build</p>
+          <div class="flex flex-col gap-5 md:flex-row md:items-start">
+            <img
+              src="/images/projects/numerinus-side.png"
+              alt="Numerinus Mathematics Library Suite"
+              class="w-full rounded-lg border border-zinc-800 object-cover md:w-48 md:flex-shrink-0"
+            />
+            <div>
+              <p class="text-sm leading-relaxed text-zinc-400">
+                A focused marketplace where .NET teams can evaluate, license, and adopt high-performance numerical packages.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
+                <li>
+                  <span class="text-zinc-300">Packages:</span> <span class="font-mono text-zinc-300">Core</span>,
+                  <span class="font-mono text-zinc-300"> Algebra</span>,
+                  <span class="font-mono text-zinc-300"> Geometry</span>,
+                  <span class="font-mono text-zinc-300"> UnitConversion</span>
+                  <span class="text-zinc-500"> (+ Statistics and Calculus planned)</span>
+                </li>
+                <li>
+                  <span class="text-zinc-300">Capabilities:</span> versioned release notes, seat-based licensing, activation
+                  management, docs, pricing, blog, and a live math playground.
+                </li>
+                <li>
+                  <span class="text-zinc-300">Stack:</span> .NET 9, ASP.NET Core, PostgreSQL, React 19, TypeScript, Vite,
+                  Tailwind v4, TanStack Query, OAuth/JWT, OpenAI assistant, Serilog, and Application Insights.
+                </li>
+              </ul>
+              <p class="mt-3 font-mono text-xs text-zinc-500">Status: Active build</p>
+            </div>
+          </div>
         </Card>
 
         <Card
@@ -62,25 +71,33 @@ const toc = [
           title="TaskProcessor (.NET Library)"
           description="A lightweight concurrency utility for controlled parallel execution in backend systems."
         >
-          <p class="text-sm text-zinc-400">
-            Built to solve instability caused by uncontrolled `Task.WhenAll` usage in high-volume workloads.
-            TaskProcessor introduces controlled parallelism, retry policies, and failure handling without polluting business
-            logic.
-          </p>
-          <p class="mt-3 text-sm text-zinc-400">
-            Supports both execution and transformation modes, making it usable for ETL, background jobs, API workloads,
-            and bulk processing pipelines.
-          </p>
-          <p class="mt-3 font-mono text-xs text-zinc-500">Published: Mar 25, 2026</p>
-          <a
-            href="https://medium.com/@linustech/why-did-i-create-taskprocessor-nuget-e49ab07b43d6"
-            target="_blank"
-            rel="noreferrer"
-            class="mt-3 inline-flex text-sm font-semibold text-cyan-400"
-          >
-            Read project article ->
-          </a>
-          <span class="checksum-tag">pkg.1.1.2</span>
+          <div class="flex flex-col gap-5 md:flex-row md:items-start">
+            <img
+              src="/images/projects/taskprocessor.png"
+              alt="TaskProcessor"
+              class="w-full rounded-lg border border-zinc-800 object-cover md:w-48 md:flex-shrink-0"
+            />
+            <div>
+              <p class="text-sm text-zinc-400">
+                Built to solve instability caused by uncontrolled `Task.WhenAll` usage in high-volume workloads.
+                TaskProcessor introduces controlled parallelism, retry policies, and failure handling without polluting business
+                logic.
+              </p>
+              <p class="mt-3 text-sm text-zinc-400">
+                Supports both execution and transformation modes, making it usable for ETL, background jobs, API workloads,
+                and bulk processing pipelines.
+              </p>
+              <p class="mt-3 font-mono text-xs text-zinc-500">Published: Mar 25, 2026</p>
+              <a
+                href="https://medium.com/@linustech/why-did-i-create-taskprocessor-nuget-e49ab07b43d6"
+                target="_blank"
+                rel="noreferrer"
+                class="mt-3 inline-flex text-sm font-semibold text-cyan-400"
+              >
+                Read project article ->
+              </a>
+            </div>
+          </div>
         </Card>
       </div>
     </details>
@@ -112,16 +129,24 @@ const toc = [
           title="SIMS Nextgen (ParentPay Group)"
           description="Enterprise SaaS platform modernization for school systems."
         >
-          <p class="text-sm leading-relaxed text-zinc-400">
-            Led delivery for the Exams domain on the Nextgen platform, from architecture decisions to production release.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
-            <li><span class="text-zinc-300">Scope:</span> DEX migration pipeline, legacy writeback flow, and module APIs.</li>
-            <li><span class="text-zinc-300">Ownership:</span> repository setup, schema planning, and release readiness.</li>
-            <li><span class="text-zinc-300">Outcome:</span> enabled stable delivery path for core school workflows.</li>
-          </ul>
-          <p class="mt-3 font-mono text-xs text-zinc-500">Jul 2025 - Present</p>
-          <span class="checksum-tag">sims.ng</span>
+          <div class="flex flex-col gap-5 md:flex-row md:items-start">
+            <img
+              src="/images/projects/sims-nextgen.png"
+              alt="SIMS Nextgen"
+              class="w-full rounded-lg border border-zinc-800 object-cover md:w-44 md:flex-shrink-0"
+            />
+            <div>
+              <p class="text-sm leading-relaxed text-zinc-400">
+                Led delivery for the Exams domain on the Nextgen platform, from architecture decisions to production release.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
+                <li><span class="text-zinc-300">Scope:</span> DEX migration pipeline, legacy writeback flow, and module APIs.</li>
+                <li><span class="text-zinc-300">Ownership:</span> repository setup, schema planning, and release readiness.</li>
+                <li><span class="text-zinc-300">Outcome:</span> enabled stable delivery path for core school workflows.</li>
+              </ul>
+              <p class="mt-3 font-mono text-xs text-zinc-500">Jul 2025 - Present</p>
+            </div>
+          </div>
         </Card>
 
         <Card
@@ -129,16 +154,24 @@ const toc = [
           title="SpecLink Cloud"
           description="Construction specification software for architects, contractors, and construction companies."
         >
-          <p class="text-sm leading-relaxed text-zinc-400">
-            Helped evolve a large SaaS platform into a more scalable and maintainable architecture.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
-            <li><span class="text-zinc-300">Stack:</span> Angular, .NET Core, SQL Server, Azure DevOps.</li>
-            <li><span class="text-zinc-300">Execution:</span> extracted heavy workflows into dedicated microservices.</li>
-            <li><span class="text-zinc-300">Impact:</span> improved performance and reduced release friction.</li>
-          </ul>
-          <p class="mt-3 font-mono text-xs text-zinc-500">Apr 2022 - Jul 2025</p>
-          <span class="checksum-tag">v2.live</span>
+          <div class="flex flex-col gap-5 md:flex-row md:items-start">
+            <img
+              src="/images/projects/speclink.png"
+              alt="RIB SpecLink"
+              class="w-full rounded-lg border border-zinc-800 bg-white object-cover md:w-44 md:flex-shrink-0"
+            />
+            <div>
+              <p class="text-sm leading-relaxed text-zinc-400">
+                Helped evolve a large SaaS platform into a more scalable and maintainable architecture.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
+                <li><span class="text-zinc-300">Stack:</span> Angular, .NET Core, SQL Server, Azure DevOps.</li>
+                <li><span class="text-zinc-300">Execution:</span> extracted heavy workflows into dedicated microservices.</li>
+                <li><span class="text-zinc-300">Impact:</span> improved performance and reduced release friction.</li>
+              </ul>
+              <p class="mt-3 font-mono text-xs text-zinc-500">Apr 2022 - Jul 2025</p>
+            </div>
+          </div>
         </Card>
 
         <Card
@@ -146,16 +179,24 @@ const toc = [
           title="Terrace Finance Corporation"
           description="Enterprise SaaS multi-lender platform."
         >
-          <p class="text-sm leading-relaxed text-zinc-400">
-            Delivered full-stack capabilities for a finance platform with multiple lender integrations.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
-            <li><span class="text-zinc-300">Focus:</span> user journeys, API integrations, and production-grade workflows.</li>
-            <li><span class="text-zinc-300">Architecture:</span> microservice-aligned implementation in Agile sprints.</li>
-            <li><span class="text-zinc-300">Delivery:</span> QA/UAT releases with consistent iteration cadence.</li>
-          </ul>
-          <p class="mt-3 font-mono text-xs text-zinc-500">May 2021 - Apr 2022</p>
-          <span class="checksum-tag">rel.1.0</span>
+          <div class="flex flex-col gap-5 md:flex-row md:items-start">
+            <img
+              src="/images/projects/terrace-finance.png"
+              alt="Terrace Finance"
+              class="w-full rounded-lg border border-zinc-800 object-cover md:w-44 md:flex-shrink-0"
+            />
+            <div>
+              <p class="text-sm leading-relaxed text-zinc-400">
+                Delivered full-stack capabilities for a finance platform with multiple lender integrations.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
+                <li><span class="text-zinc-300">Focus:</span> user journeys, API integrations, and production-grade workflows.</li>
+                <li><span class="text-zinc-300">Architecture:</span> microservice-aligned implementation in Agile sprints.</li>
+                <li><span class="text-zinc-300">Delivery:</span> QA/UAT releases with consistent iteration cadence.</li>
+              </ul>
+              <p class="mt-3 font-mono text-xs text-zinc-500">May 2021 - Apr 2022</p>
+            </div>
+          </div>
         </Card>
       </div>
     </details>
