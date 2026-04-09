@@ -1,0 +1,46 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  variant?: "primary" | "ghost";
+  newTab?: boolean;
+  icon?: "linkedin" | "github" | "medium";
+}
+
+const { href, label, variant = "primary", newTab = false, icon } = Astro.props as Props;
+
+const variants = {
+  primary: "bg-cyan-400 text-slate-950 hover:bg-cyan-300",
+  ghost: "border border-slate-800 text-zinc-100 hover:border-cyan-400/60 hover:text-cyan-400",
+};
+---
+
+<a
+  href={href}
+  target={newTab ? "_blank" : undefined}
+  rel={newTab ? "noreferrer" : undefined}
+  class={`inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold transition ${variants[variant]}`}
+>
+  <span>{label}</span>
+  {
+    icon === "linkedin" && (
+      <svg class="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.97 1.97 0 103 4.97 1.98 1.98 0 005.25 3zM21 13.35C21 10 19.2 8.26 16.8 8.26a4.17 4.17 0 00-3.57 1.96V8.5H9.84V20h3.39v-6.4c0-1.68.31-3.3 2.4-3.3s2.1 1.94 2.1 3.4V20H21z"></path>
+      </svg>
+    )
+  }
+  {
+    icon === "github" && (
+      <svg class="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 .5A12 12 0 000 12.7a12.2 12.2 0 008.2 11.6c.6.1.8-.2.8-.6v-2.2c-3.3.7-4-1.5-4-1.5a3.2 3.2 0 00-1.3-1.8c-1-.7.1-.7.1-.7a2.5 2.5 0 011.9 1.3 2.6 2.6 0 003.5 1 2.7 2.7 0 01.8-1.7c-2.7-.3-5.5-1.4-5.5-6.1a4.9 4.9 0 011.2-3.3 4.6 4.6 0 01.1-3.2s1-.3 3.4 1.3a11.2 11.2 0 016.2 0c2.4-1.6 3.4-1.3 3.4-1.3a4.6 4.6 0 01.1 3.2 4.9 4.9 0 011.2 3.3c0 4.8-2.8 5.8-5.5 6.1a3 3 0 01.9 2.4v3.5c0 .4.2.7.8.6A12.2 12.2 0 0024 12.7 12 12 0 0012 .5z"></path>
+      </svg>
+    )
+  }
+  {
+    icon === "medium" && (
+      <svg class="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M4.2 6.8a.7.7 0 00-.2-.9L2.6 4.2V4h5.2l4 8.7L15.3 4h5v.2l-1.2 1.1a.4.4 0 00-.2.4v12.6a.4.4 0 00.2.4l1.2 1.1v.2h-6.1v-.2l1.2-1.1c.1-.1.1-.2.1-.4V8.1l-4.4 11.8h-.6L5.4 8.1v8.6a1 1 0 00.3.8l1.6 1.9v.2H3v-.2l1.6-1.9a1 1 0 00.3-.8V7.2z"></path>
+      </svg>
+    )
+  }
+</a>

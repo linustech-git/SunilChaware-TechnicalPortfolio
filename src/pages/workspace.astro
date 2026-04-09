@@ -1,0 +1,163 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/shared/Card.astro";
+
+const toc = [
+  { label: "Projects Overview", href: "#overview" },
+  { label: "My Own Projects", href: "#my-own-projects" },
+  { label: "Company Projects", href: "#company-projects" },
+];
+---
+
+<MainLayout title="Workspace | Numerinus" description="Numerinus workspace and tool-suite overview." toc={toc}>
+  <section id="overview" class="glass-card p-7 md:p-9">
+    <h1 class="text-3xl font-semibold text-zinc-100 md:text-[2.35rem]">My Projects</h1>
+    <p class="mt-4 max-w-2xl text-zinc-400">
+      A curated view of products, platforms, and technical initiatives I have built and shipped.
+    </p>
+  </section>
+
+  <section id="my-own-projects" class="mt-10 glass-card p-6 md:p-8">
+    <details class="group" open>
+      <summary class="glass-card hover-expand block cursor-pointer list-none p-4">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="text-2xl font-semibold text-zinc-100">My Own Projects</p>
+            <p class="mt-2 text-zinc-400">Independent builds, product experiments, and library-driven platforms.</p>
+          </div>
+          <span class="mt-1 font-mono text-xs text-zinc-500 transition group-open:rotate-90">▶</span>
+        </div>
+      </summary>
+      <div class="mt-4 grid gap-6 md:grid-cols-2">
+        <Card
+          className="group hover-expand md:col-span-2"
+          title="Numerinus Store"
+          description="A commercial platform for production-grade .NET numerical computing packages."
+        >
+          <p class="text-sm leading-relaxed text-zinc-400">
+            A focused marketplace where .NET teams can evaluate, license, and adopt high-performance numerical packages.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
+            <li>
+              <span class="text-zinc-300">Packages:</span> <span class="font-mono text-zinc-300">Core</span>,
+              <span class="font-mono text-zinc-300"> Algebra</span>,
+              <span class="font-mono text-zinc-300"> Geometry</span>,
+              <span class="font-mono text-zinc-300"> UnitConversion</span>
+              <span class="text-zinc-500"> (+ Statistics and Calculus planned)</span>
+            </li>
+            <li>
+              <span class="text-zinc-300">Capabilities:</span> versioned release notes, seat-based licensing, activation
+              management, docs, pricing, blog, and a live math playground.
+            </li>
+            <li>
+              <span class="text-zinc-300">Stack:</span> .NET 9, ASP.NET Core, PostgreSQL, React 19, TypeScript, Vite,
+              Tailwind v4, TanStack Query, OAuth/JWT, OpenAI assistant, Serilog, and Application Insights.
+            </li>
+          </ul>
+          <p class="mt-3 font-mono text-xs text-zinc-500">Status: Active build</p>
+        </Card>
+
+        <Card
+          className="group hover-expand md:col-span-2"
+          title="TaskProcessor (.NET Library)"
+          description="A lightweight concurrency utility for controlled parallel execution in backend systems."
+        >
+          <p class="text-sm text-zinc-400">
+            Built to solve instability caused by uncontrolled `Task.WhenAll` usage in high-volume workloads.
+            TaskProcessor introduces controlled parallelism, retry policies, and failure handling without polluting business
+            logic.
+          </p>
+          <p class="mt-3 text-sm text-zinc-400">
+            Supports both execution and transformation modes, making it usable for ETL, background jobs, API workloads,
+            and bulk processing pipelines.
+          </p>
+          <p class="mt-3 font-mono text-xs text-zinc-500">Published: Mar 25, 2026</p>
+          <a
+            href="https://medium.com/@linustech/why-did-i-create-taskprocessor-nuget-e49ab07b43d6"
+            target="_blank"
+            rel="noreferrer"
+            class="mt-3 inline-flex text-sm font-semibold text-cyan-400"
+          >
+            Read project article ->
+          </a>
+          <span class="checksum-tag">pkg.1.1.2</span>
+        </Card>
+      </div>
+    </details>
+
+  </section>
+
+  <section id="company-projects" class="mt-10 glass-card p-6 md:p-8">
+    <details class="group" open>
+      <summary class="glass-card hover-expand block cursor-pointer list-none p-4">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="text-2xl font-semibold text-zinc-100">Company Projects</p>
+            <p class="mt-2 text-zinc-400">Enterprise systems delivered across EdTech, construction, and fintech domains.</p>
+          </div>
+          <span class="mt-1 font-mono text-xs text-zinc-500 transition group-open:rotate-90">▶</span>
+        </div>
+      </summary>
+      <a
+        href="https://www.linkedin.com/in/sunil-chaware-9035a646/"
+        target="_blank"
+        rel="noreferrer"
+        class="mt-2 inline-flex text-sm font-semibold text-cyan-400"
+      >
+        View full LinkedIn profile ->
+      </a>
+      <div class="mt-5 grid gap-6">
+        <Card
+          className="group hover-expand"
+          title="SIMS Nextgen (ParentPay Group)"
+          description="Enterprise SaaS platform modernization for school systems."
+        >
+          <p class="text-sm leading-relaxed text-zinc-400">
+            Led delivery for the Exams domain on the Nextgen platform, from architecture decisions to production release.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
+            <li><span class="text-zinc-300">Scope:</span> DEX migration pipeline, legacy writeback flow, and module APIs.</li>
+            <li><span class="text-zinc-300">Ownership:</span> repository setup, schema planning, and release readiness.</li>
+            <li><span class="text-zinc-300">Outcome:</span> enabled stable delivery path for core school workflows.</li>
+          </ul>
+          <p class="mt-3 font-mono text-xs text-zinc-500">Jul 2025 - Present</p>
+          <span class="checksum-tag">sims.ng</span>
+        </Card>
+
+        <Card
+          className="group hover-expand"
+          title="SpecLink Cloud"
+          description="Construction specification software for architects, contractors, and construction companies."
+        >
+          <p class="text-sm leading-relaxed text-zinc-400">
+            Helped evolve a large SaaS platform into a more scalable and maintainable architecture.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
+            <li><span class="text-zinc-300">Stack:</span> Angular, .NET Core, SQL Server, Azure DevOps.</li>
+            <li><span class="text-zinc-300">Execution:</span> extracted heavy workflows into dedicated microservices.</li>
+            <li><span class="text-zinc-300">Impact:</span> improved performance and reduced release friction.</li>
+          </ul>
+          <p class="mt-3 font-mono text-xs text-zinc-500">Apr 2022 - Jul 2025</p>
+          <span class="checksum-tag">v2.live</span>
+        </Card>
+
+        <Card
+          className="group hover-expand"
+          title="Terrace Finance Corporation"
+          description="Enterprise SaaS multi-lender platform."
+        >
+          <p class="text-sm leading-relaxed text-zinc-400">
+            Delivered full-stack capabilities for a finance platform with multiple lender integrations.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm leading-relaxed text-zinc-400">
+            <li><span class="text-zinc-300">Focus:</span> user journeys, API integrations, and production-grade workflows.</li>
+            <li><span class="text-zinc-300">Architecture:</span> microservice-aligned implementation in Agile sprints.</li>
+            <li><span class="text-zinc-300">Delivery:</span> QA/UAT releases with consistent iteration cadence.</li>
+          </ul>
+          <p class="mt-3 font-mono text-xs text-zinc-500">May 2021 - Apr 2022</p>
+          <span class="checksum-tag">rel.1.0</span>
+        </Card>
+      </div>
+    </details>
+  </section>
+</MainLayout>

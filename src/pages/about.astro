@@ -1,0 +1,90 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/shared/Button.astro";
+
+const toc = [
+  { label: "About", href: "#about" },
+  { label: "How I Work", href: "#how-i-work" },
+  { label: "What I Value", href: "#what-i-value" },
+];
+---
+
+<MainLayout
+  title="About | SunilChaware"
+  description="About Sunil Chaware: engineer, product builder, and lifelong learner."
+  toc={toc}
+>
+  <section id="about" class="glass-card p-7 md:p-10">
+    <h1 class="text-2xl font-semibold leading-tight text-zinc-100 md:text-[2.35rem]">
+      I build products where deep engineering meets practical value.
+    </h1>
+    <div class="mt-6 max-w-2xl space-y-5 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+      <p>
+        I am Sunil, an engineer who enjoys turning complex ideas into useful products. I like technology not only for
+        what it can do, but for what it can simplify. Right now, I am building Numerinus, a .NET math library, and a
+        storefront around it. That combination matters to me because I care about both sides of engineering: creating
+        a powerful core and making it easy for people to discover, understand, and trust what they are using.
+      </p>
+      <p>
+        My mindset is shaped by curiosity. I spend a lot of time exploring architecture, performance, developer
+        experience, and product clarity. I enjoy the details: naming, API ergonomics, error behavior, and the little
+        interaction choices that make software feel reliable. I keep learning through experiments, writing, rebuilding,
+        and shipping. Every iteration teaches me something, and I try to convert that learning into cleaner systems and
+        better decisions.
+      </p>
+      <p>
+        I do not see engineering as just code delivery. For me, it is a craft with responsibility. Build with
+        precision. Communicate with clarity. Design with empathy for both users and developers. Leave systems more
+        stable, understandable, and future-ready than they were before. That is the standard I hold for my work, and
+        the direction I want Numerinus to represent.
+      </p>
+      <p>
+        I am also energized by leadership through execution: mentoring developers, improving engineering practices, and
+        helping teams move from ambiguity to shippable outcomes. The balance I value most is this: think strategically,
+        execute practically, and keep the product experience as strong as the technical foundation behind it.
+      </p>
+    </div>
+    <div class="mt-8 flex flex-wrap gap-2.5">
+      <Button href="/Sunil-Chaware-CV.pdf" label="Download CV" variant="ghost" newTab={true} />
+      <Button
+        href="https://www.linkedin.com/in/sunil-chaware-9035a646/"
+        label="LinkedIn Profile"
+        variant="ghost"
+        newTab={true}
+        icon="linkedin"
+      />
+      <Button
+        href="https://github.com/linustech-git"
+        label="GitHub Profile"
+        variant="ghost"
+        newTab={true}
+        icon="github"
+      />
+      <Button
+        href="https://medium.com/@linustech"
+        label="Medium Articles"
+        variant="ghost"
+        newTab={true}
+        icon="medium"
+      />
+    </div>
+  </section>
+
+  <section id="how-i-work" class="mt-10 glass-card p-7 md:p-10">
+    <h2 class="text-2xl font-semibold">How I Work</h2>
+    <ul class="mt-5 space-y-3 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+      <li><span class="text-zinc-200">Think in systems:</span> understand constraints first, then design for long-term maintainability.</li>
+      <li><span class="text-zinc-200">Ship iteratively:</span> reduce risk through smaller releases and faster feedback loops.</li>
+      <li><span class="text-zinc-200">Lead from the code:</span> align teams by pairing technical depth with delivery clarity.</li>
+    </ul>
+  </section>
+
+  <section id="what-i-value" class="mt-10 glass-card p-7 md:p-10">
+    <h2 class="text-2xl font-semibold">What I Value</h2>
+    <ul class="mt-5 space-y-3 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+      <li><span class="text-zinc-200">Clarity over noise:</span> simple, explicit systems beat clever but fragile complexity.</li>
+      <li><span class="text-zinc-200">Reliability over hype:</span> tools should perform consistently in production.</li>
+      <li><span class="text-zinc-200">Ownership over motion:</span> outcomes matter more than activity.</li>
+    </ul>
+  </section>
+</MainLayout>

@@ -1,0 +1,112 @@
+---
+import "../styles/global.css";
+
+interface TocItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  toc?: TocItem[];
+}
+
+const { title, description = "Technical whitepaper portfolio for an architect/engineer.", toc = [] } =
+  Astro.props as Props;
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Workspace", href: "/workspace" },
+  { label: "Archive", href: "/archive" },
+  { label: "Lab", href: "/lab" },
+];
+
+const isPathCurrent = (href: string) =>
+  href === "/" ? Astro.url.pathname === "/" : Astro.url.pathname === href || Astro.url.pathname.startsWith(`${href}/`);
+const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-active" : "nav-link");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen text-zinc-100">
+    <div id="mouse-glow" aria-hidden="true"></div>
+    <div class="relative z-10 mx-auto max-w-[1360px] px-4 py-5 md:px-7 lg:px-10">
+      <header class="sticky top-4 z-20 mb-8 border-b border-zinc-800/80 bg-black/70 px-4 py-3 backdrop-blur-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <a href="/" class="text-base font-semibold tracking-wide text-cyan-400 hover:text-cyan-300 md:text-lg">
+            Sunil Chaware - Technical Portfolio
+          </a>
+          <nav class="flex items-center gap-4">
+            {navItems.map((item) => (
+              <a href={item.href} class={isCurrent(item.href)}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <div class="grid gap-8 lg:grid-cols-[210px_minmax(0,1fr)_210px]">
+        <aside class="hidden h-fit border-b border-zinc-800/80 p-4 lg:block">
+          <p class="text-xs uppercase tracking-[0.14em] text-zinc-500">Sections</p>
+          <ul class="timeline-list">
+            <span class="timeline-line" aria-hidden="true"></span>
+            {navItems.map((item) => (
+              <li class="relative">
+                <a href={item.href} class={isPathCurrent(item.href) ? "step-link step-link-active" : "step-link"}>
+                  <span class={isPathCurrent(item.href) ? "step-dot step-dot-active" : "step-dot"}></span>
+                  <span>{item.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+
+        <main class="min-w-0">
+          <slot />
+        </main>
+
+        <aside class="hidden h-fit self-start border-b border-zinc-800/80 p-4 lg:sticky lg:top-24 lg:block">
+          <p class="text-xs uppercase tracking-[0.14em] text-zinc-500">On this page</p>
+          {toc.length > 0 ? (
+            <ul class="mt-3 space-y-1">
+              {toc.map((item, idx) => (
+                <li>
+                  <a href={item.href} class={idx === 0 ? "toc-link toc-link-active" : "toc-link"}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p class="mt-3 text-sm text-zinc-400">No anchors provided.</p>
+          )}
+        </aside>
+      </div>
+    </div>
+    <script>
+      const glow = document.getElementById("mouse-glow");
+      if (glow) {
+        window.addEventListener("pointermove", (event) => {
+          const x = event.clientX - 90;
+          const y = event.clientY - 90;
+          glow.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+    </script>
+  </body>
+</html>

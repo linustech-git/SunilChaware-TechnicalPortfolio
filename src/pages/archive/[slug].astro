@@ -1,0 +1,38 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("archive", ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+if (!slug) {
+  throw new Error("Missing archive slug.");
+}
+
+const entry = await getEntry("archive", slug);
+if (!entry) {
+  throw new Error(`Archive entry not found: ${slug}`);
+}
+
+const { Content } = await render(entry);
+---
+
+<MainLayout
+  title={`${entry.data.title} | Archive`}
+  description={entry.data.description}
+  toc={[{ label: "Article", href: "#article" }]}
+>
+  <article id="article" class="glass-card content-prose p-7 md:p-9">
+    <p class="font-mono text-xs uppercase tracking-wider text-zinc-400">{entry.data.publishedAt.toDateString()}</p>
+    <h1 class="mt-4 text-3xl font-semibold text-zinc-100 md:text-[2.35rem]">{entry.data.title}</h1>
+    <p class="mt-3 max-w-2xl text-zinc-400">{entry.data.description}</p>
+    <div class="mt-6">
+      <Content />
+    </div>
+  </article>
+</MainLayout>

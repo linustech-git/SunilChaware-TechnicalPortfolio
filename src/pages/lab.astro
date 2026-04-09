@@ -1,0 +1,39 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/shared/Card.astro";
+
+const toc = [
+  { label: "Lab Charter", href: "#charter" },
+  { label: "NuGet Library", href: "#nuget-library" },
+  { label: "Experiments", href: "#experiments" },
+];
+---
+
+<MainLayout title="Lab | SunilChaware" description="Code snippets and live engineering experiments." toc={toc}>
+  <section id="charter" class="glass-card p-7 md:p-9">
+    <h1 class="text-3xl font-semibold text-zinc-100 md:text-[2.35rem]">Lab</h1>
+    <p class="mt-4 max-w-2xl text-zinc-400">
+      A working notebook for prototyping ideas before they are productionized in Numerinus.
+    </p>
+  </section>
+
+  <section id="nuget-library" class="mt-10 glass-card p-7 md:p-9">
+    <h2 class="text-2xl font-semibold">NuGet Package Library</h2>
+    <p class="mt-4 max-w-2xl text-zinc-400">
+      Explore my NuGet package work here:
+      <a
+        href="https://www.nuget.org/profiles/LinusTech"
+        target="_blank"
+        rel="noreferrer"
+        class="ml-1 font-semibold text-cyan-400 hover:text-cyan-300"
+      >
+        LinusTech NuGet Profile
+      </a>
+      .
+    </p>
+    <p class="mt-4 max-w-2xl text-zinc-400">
+      A dedicated storefront for Numerinus NuGet packages is coming soon.
+    </p>
+  </section>
+
+</MainLayout>

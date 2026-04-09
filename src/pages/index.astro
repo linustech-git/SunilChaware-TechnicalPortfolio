@@ -1,0 +1,106 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/shared/Button.astro";
+import Card from "../components/shared/Card.astro";
+
+const toc = [
+  { label: "Intro", href: "#intro" },
+  { label: "What I Optimize For", href: "#optimize-for" },
+  { label: "Work Snapshot", href: "#work-snapshot" },
+  { label: "Current Priorities", href: "#current-priorities" },
+];
+---
+
+<MainLayout
+  title="Home | SunilChaware"
+  description="Technical whitepaper style portfolio blending architecture, product strategy, and code execution."
+  toc={toc}
+>
+  <section id="intro" class="glass-card p-7 md:p-10">
+    <h1 class="max-w-4xl text-3xl font-semibold leading-tight text-zinc-100 md:text-[2.85rem]">Introduction</h1>
+    <p class="mt-5 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+      I am Sunil Chaware. I am a Senior Developer and technical leader who believes that great products are built where
+      robust architecture meets an uncompromising developer experience. My career has been spent leading teams and
+      shipping systems that solve real-world problems with pragmatic, high-performance code.
+    </p>
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+      I lead with a "tech-first" mindset-balancing the macro-view of leadership with the micro-precision of a builder.
+      This space is my technical whitepaper: a transparent look at my decision-making process, the trade-offs I navigate
+      under real-world constraints, and the evolution of my current primary project, Numerinus.
+    </p>
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+      Over the years, I have worked across EdTech, finance, and enterprise platforms, with a strong focus on system
+      reliability, performance tuning, and secure product delivery. I care about outcomes, not just implementation:
+      shipping software that is maintainable, trusted by teams, and useful in the real world.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-2.5">
+      <Button href="/workspace" label="Explore Workspace" />
+      <Button href="/Sunil-Chaware-CV.pdf" label="Download CV" variant="ghost" newTab={true} />
+      <Button
+        href="https://www.linkedin.com/in/sunil-chaware-9035a646/"
+        label="LinkedIn"
+        variant="ghost"
+        newTab={true}
+        icon="linkedin"
+      />
+      <Button href="https://github.com/linustech-git" label="GitHub" variant="ghost" newTab={true} icon="github" />
+    </div>
+    <div class="terminal-window mt-9 max-w-2xl">
+      <p class="typing-line">$ building --now "Numerinus: .NET math library + storefront"</p>
+      <p class="mt-3 font-mono text-xs text-zinc-400">
+        architecture | performance | product usability
+      </p>
+    </div>
+  </section>
+
+  <section id="optimize-for" class="mt-10 glass-card p-7 md:p-9">
+    <h2 class="text-2xl font-semibold">What I Optimize For</h2>
+    <ul class="mt-5 space-y-3 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+      <li><span class="text-zinc-200">Architecture clarity:</span> systems that teams can reason about and evolve safely.</li>
+      <li><span class="text-zinc-200">Execution quality:</span> pragmatic delivery with reliability, observability, and speed.</li>
+      <li><span class="text-zinc-200">Developer experience:</span> APIs and workflows that reduce friction and increase confidence.</li>
+      <li><span class="text-zinc-200">Business alignment:</span> technical decisions mapped to measurable product outcomes.</li>
+    </ul>
+  </section>
+
+  <section id="work-snapshot" class="mt-10 space-y-6">
+    <Card title="Current Focus" description="Numerinus and platform foundations">
+      <div class="flex flex-col gap-4 md:flex-row md:items-start">
+        <div class="w-full md:w-40 md:flex-shrink-0">
+          <img
+            src="/images/current-focus.svg"
+            alt="Current focus visual"
+            class="h-24 w-full rounded-lg border border-slate-800 object-cover md:h-28"
+          />
+        </div>
+        <p class="text-sm text-zinc-400">
+          API ergonomics, mathematical correctness, package design, and a storefront that makes adoption frictionless.
+        </p>
+      </div>
+    </Card>
+    <Card title="Engineering Style" description="How I execute">
+      <div class="flex flex-col gap-4 md:flex-row md:items-start">
+        <div class="w-full md:w-40 md:flex-shrink-0">
+          <img
+            src="/images/engineering-style.svg"
+            alt="Engineering style visual"
+            class="h-24 w-full rounded-lg border border-slate-800 object-cover md:h-28"
+          />
+        </div>
+        <p class="text-sm text-zinc-400">
+          Build with precision, communicate with clarity, and optimize for maintainability before complexity compounds.
+        </p>
+      </div>
+    </Card>
+  </section>
+
+  <section id="current-priorities" class="mt-10 glass-card p-7 md:p-9">
+    <h2 class="text-2xl font-semibold">Current Priorities</h2>
+    <ul class="mt-5 space-y-3 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
+      <li><span class="text-zinc-200">Numerinus Store:</span> productizing .NET numerical libraries with clear adoption pathways.</li>
+      <li><span class="text-zinc-200">Core engineering:</span> package quality, release discipline, and performance-first design.</li>
+      <li><span class="text-zinc-200">Knowledge system:</span> publishing technical notes to document decisions and trade-offs.</li>
+    </ul>
+  </section>
+
+</MainLayout>
