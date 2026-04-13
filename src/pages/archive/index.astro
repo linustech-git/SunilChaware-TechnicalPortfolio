@@ -6,6 +6,12 @@ const allEntries = await getCollection("archive", ({ data }) => !data.draft);
 const entries = allEntries.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 const mediumArticles = [
   {
+    title: "Prododo: Your Product Management with Dodo Payments Made Easy",
+    date: "Apr 13, 2026",
+    href: "https://medium.com/@linustech/prododo-your-product-management-with-dodo-payments-made-easy-cbe454f7095d",
+    checksum: "md.cbe454",
+  },
+  {
     title: "Why did I create TaskProcessor library?",
     date: "Mar 25, 2026",
     href: "https://medium.com/@linustech/why-did-i-create-taskprocessor-nuget-e49ab07b43d6",
