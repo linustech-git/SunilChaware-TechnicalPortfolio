@@ -17,14 +17,52 @@ html,
 body {
   margin: 0;
   padding: 0;
+  min-width: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   background: #000000;
   color: #f4f4f5;
   line-height: 1.55;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+main,
+header,
+section,
+article,
+div,
+ul,
+ol,
+li {
+  min-width: 0;
+}
+
+.content-prose,
+.content-prose p,
+.content-prose li,
+.content-prose pre {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 body {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.25) 1px, transparent 0);
   background-size: 34px 34px;
 }
 
