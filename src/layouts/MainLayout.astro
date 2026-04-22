@@ -45,11 +45,15 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
   </head>
   <body class="min-h-screen text-zinc-100">
     <div id="mouse-glow" aria-hidden="true"></div>
-    <div class="relative z-10 mx-auto max-w-[1360px] px-4 py-5 md:px-7 lg:px-10">
-      <header class="sticky top-4 z-20 mb-8 border-b border-zinc-800/80 bg-black/70 px-4 py-3 backdrop-blur-sm">
+    <div class="relative z-10 mx-auto max-w-[1440px] px-4 py-5 md:px-7 lg:px-10">
+      <header class="sticky top-4 z-20 mb-8 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-xl">
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <a href="/" class="text-base font-semibold tracking-wide text-orange-400 hover:text-orange-300 md:text-lg">
-            Sunil Chaware - Technical Portfolio
+          <a href="/" class="group inline-flex items-center gap-3 text-sm font-semibold tracking-wide text-zinc-100 hover:text-orange-200 md:text-base">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl border border-orange-300/30 bg-orange-400/15 font-mono text-sm text-orange-200 shadow-lg shadow-orange-950/20">SC</span>
+            <span class="leading-tight">
+              <span class="block">Sunil Chaware</span>
+              <span class="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 group-hover:text-orange-300/80">Technical Portfolio</span>
+            </span>
           </a>
           <div class="relative flex items-center gap-3">
             <button
@@ -57,7 +61,7 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
               type="button"
               aria-expanded="false"
               aria-controls="site-navigation"
-              class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-950/80 text-zinc-200 transition hover:border-orange-400 hover:text-orange-300 md:hidden"
+              class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-200 transition hover:border-orange-400/50 hover:text-orange-200 md:hidden"
             >
               <span class="sr-only">Toggle navigation</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
@@ -67,9 +71,9 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
 
             <nav
               id="site-navigation"
-              class="hidden min-w-full rounded-2xl border border-zinc-800/80 bg-black/90 p-4 shadow-2xl backdrop-blur-sm md:flex md:min-w-0 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+              class="hidden min-w-full rounded-2xl border border-white/10 bg-slate-950/95 p-4 shadow-2xl backdrop-blur-xl md:flex md:min-w-0 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none"
             >
-              <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
+              <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-1">
                 {navItems.map((item) => (
                   <a href={item.href} class={isCurrent(item.href)}>
                     {item.label}
@@ -81,9 +85,9 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
         </div>
       </header>
 
-      <div class="grid gap-8 lg:grid-cols-[210px_minmax(0,1fr)_210px]">
-        <aside class="hidden h-fit border-b border-zinc-800/80 p-4 lg:block">
-          <p class="text-xs uppercase tracking-[0.14em] text-zinc-500">Sections</p>
+      <div class="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)_220px]">
+        <aside class="glass-card hidden h-fit p-4 lg:sticky lg:top-24 lg:block">
+          <p class="premium-kicker">Sections</p>
           <ul class="timeline-list">
             <span class="timeline-line" aria-hidden="true"></span>
             {navItems.map((item) => (
@@ -101,8 +105,8 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
           <slot />
         </main>
 
-        <aside class="hidden h-fit self-start border-b border-zinc-800/80 p-4 lg:sticky lg:top-24 lg:block">
-          <p class="text-xs uppercase tracking-[0.14em] text-zinc-500">On this page</p>
+        <aside class="glass-card hidden h-fit self-start p-4 lg:sticky lg:top-24 lg:block">
+          <p class="premium-kicker">On this page</p>
           {toc.length > 0 ? (
             <ul class="mt-3 space-y-1">
               {toc.map((item, idx) => (
