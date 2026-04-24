@@ -47,16 +47,17 @@ const mediumArticles = [
   ]}
 >
   <section id="all-insights" class="glass-card p-7 md:p-9">
-    <h1 class="text-3xl font-semibold text-zinc-100 md:text-[2.35rem]">Archive</h1>
-    <p class="mt-4 max-w-2xl text-zinc-400">A chronological index of technical whitepapers, patterns, and operational insights.</p>
+    <p class="premium-kicker">Writing and Notes</p>
+    <h1 class="mt-4 text-4xl font-semibold text-zinc-50 md:text-[2.85rem]">Archive</h1>
+    <p class="mt-4 max-w-3xl text-zinc-300">A chronological index of technical whitepapers, patterns, and operational insights.</p>
 
     <ul class="mt-6 space-y-4">
       {entries.map((entry, idx) => (
         <li>
-          <a class="group glass-card hover-expand relative block rounded-xl p-5" href={`/archive/${entry.slug}`}>
+          <a class="group hover-expand relative block rounded-2xl border border-white/10 bg-white/[0.035] p-5 shadow-xl shadow-black/10 transition hover:border-orange-300/25 hover:bg-white/[0.06]" href={`/archive/${entry.id}`}>
             <span class="checksum-tag">rev.{String(idx + 12).padStart(3, "0")}</span>
             <p class="text-sm text-zinc-400">{entry.data.publishedAt.toLocaleDateString()}</p>
-            <h2 class="mt-1 text-lg font-semibold text-zinc-100 group-hover:text-orange-400">{entry.data.title}</h2>
+            <h2 class="mt-1 text-lg font-semibold text-zinc-50 group-hover:text-orange-200">{entry.data.title}</h2>
             <p class="mt-1 text-sm text-zinc-400">{entry.data.description}</p>
           </a>
         </li>
@@ -66,13 +67,15 @@ const mediumArticles = [
 
   <section id="external-publications" class="mt-10 glass-card p-7 md:p-9">
     <details class="mt-3 group" open>
-      <summary class="glass-card hover-expand block cursor-pointer list-none p-4">
+      <summary class="hover-expand block cursor-pointer list-none rounded-2xl border border-white/10 bg-white/[0.035] p-5">
         <div class="flex items-start justify-between gap-3">
           <div>
             <p class="text-2xl font-semibold text-zinc-100">Medium Writing</p>
             <p class="mt-2 text-zinc-400">Long-form technical notes, architecture ideas, and implementation learnings.</p>
           </div>
-          <span class="mt-1 font-mono text-xs text-zinc-500 transition group-open:rotate-90">▶</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mt-1 h-5 w-5 flex-shrink-0 text-zinc-500 transition group-open:rotate-90">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
         </div>
       </summary>
 
@@ -83,11 +86,11 @@ const mediumArticles = [
               href={article.href}
               target="_blank"
               rel="noreferrer"
-              class="group glass-card hover-expand relative block rounded-xl p-4"
+              class="group hover-expand relative block rounded-2xl border border-white/10 bg-white/[0.035] p-4 shadow-xl shadow-black/10 transition hover:border-orange-300/25 hover:bg-white/[0.06]"
             >
               <span class="checksum-tag">{article.checksum}</span>
               <p class="font-mono text-xs text-zinc-500">{article.date}</p>
-              <p class="mt-1 text-base font-semibold text-zinc-100 group-hover:text-orange-400">{article.title}</p>
+              <p class="mt-1 text-base font-semibold text-zinc-50 group-hover:text-orange-200">{article.title}</p>
             </a>
           </li>
         ))}

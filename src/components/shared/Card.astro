@@ -8,10 +8,10 @@ interface Props {
 const { title, description, className = "" } = Astro.props as Props;
 ---
 
-<article class={`glass-card py-5 ${className}`}>
-  {title && <h3 class="text-base font-semibold text-zinc-100">{title}</h3>}
-  {description && <p class="mt-2 text-sm text-zinc-400">{description}</p>}
-  <div class="mt-4">
+<article class={`glass-card p-5 transition duration-300 hover:border-orange-300/25 hover:bg-white/[0.075] ${className}`}>
+  {title && <h3 class="relative text-lg font-semibold text-zinc-50">{title}</h3>}
+  {description && <p class="relative mt-2 text-sm leading-relaxed text-zinc-400">{description}</p>}
+  <div class="relative mt-5">
     <slot />
   </div>
 </article>

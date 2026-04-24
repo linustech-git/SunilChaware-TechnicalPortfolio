@@ -11,8 +11,8 @@ interface Props {
 const { href, label, variant = "primary", newTab = false, icon, className = "" } = Astro.props as Props;
 
 const variants = {
-  primary: "bg-orange-400 text-slate-950 hover:bg-orange-300",
-  ghost: "border border-slate-800 text-zinc-100 hover:border-orange-400/60 hover:text-orange-400",
+  primary: "border border-orange-300/60 bg-orange-300 text-slate-950 shadow-lg shadow-orange-950/20 hover:bg-orange-200",
+  ghost: "border border-white/10 bg-white/[0.035] text-zinc-100 hover:border-orange-300/45 hover:bg-orange-300/10 hover:text-orange-200",
 };
 ---
 
@@ -20,7 +20,7 @@ const variants = {
   href={href}
   target={newTab ? "_blank" : undefined}
   rel={newTab ? "noreferrer" : undefined}
-  class={`inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold transition ${variants[variant]} ${className}`}
+  class={`inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-200 ${variants[variant]} ${className}`}
 >
   <span>{label}</span>
   {
