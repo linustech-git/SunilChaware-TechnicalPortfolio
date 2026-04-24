@@ -36,7 +36,7 @@ const skillGroups = [
       "Docker",
       "Kubernetes",
       "Railway",
-      "Github Actions"
+      "Github Actions",
     ],
   },
   {
@@ -52,7 +52,7 @@ const skillGroups = [
   {
     label: "Security",
     bg: "/images/skills/security.svg",
-    items: ["SSO", "MFA", "Machine fingerprinting", "RBAC", "OAuth 2.0"],
+    items: ["SSO", "MFA", "Machine fingerprinting", "RBAC", "OAuth 2.0", "Rate Limiting"],
   },
   {
     label: "Tools",
@@ -65,8 +65,9 @@ const skillGroups = [
       "Swagger",
       "Git",
       "GitHub Copilot",
-      "Azure function",
-      "Service bus and Event Hub",
+      "Azure Function",
+      "Service Bus",
+      "Event Hub",
     ],
   },
 ];
@@ -74,39 +75,55 @@ const skillGroups = [
 
 <MainLayout
   title="About | SunilChaware"
-  description="About Sunil Chaware: engineer, product builder, and lifelong learner."
+  description="About Sunil Chaware: full stack software consultant, product builder, and lifelong learner."
   toc={toc}
 >
   <section id="about" class="glass-card p-7 md:p-10">
     <h1 class="text-2xl font-semibold leading-tight text-orange-200 md:text-[2.35rem]">
-      I build products where deep engineering meets practical value.
+      I design and build systems where deep engineering meets practical value.
     </h1>
+
     <div class="mt-6 max-w-2xl space-y-5 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]" style="text-align: justify;">
       <p>
-        I am Sunil, an engineer who enjoys turning complex ideas into useful products. I like technology not only for
-        what it can do, but for what it can simplify. Right now, I am building Numerinus, a .NET math library, and a
-        storefront around it. That combination matters to me because I care about both sides of engineering: creating
-        a powerful core and making it easy for people to discover, understand, and trust what they are using.
+        I am Sunil, a full stack software consultant focused on building systems where deep engineering meets practical
+        value. Over time, my role has evolved from contributing to existing codebases to designing and building systems
+        end-to-end — creating repositories from scratch, enforcing code quality, taking database schema decisions, and
+        contributing to cross-domain and architectural design.
       </p>
+
       <p>
-        My mindset is shaped by curiosity. I spend a lot of time exploring architecture, performance, developer
-        experience, and product clarity. I enjoy the details: naming, API ergonomics, error behavior, and the little
-        interaction choices that make software feel reliable. I keep learning through experiments, writing, rebuilding,
-        and shipping. Every iteration teaches me something, and I try to convert that learning into cleaner systems and
-        better decisions.
+        I work extensively with distributed systems and event-driven architecture. My core stack includes .NET, Angular,
+        SQL Server, and PostgreSQL, with hands-on experience in Azure services such as Functions, Service Bus, and Event
+        Hub. Alongside development, I focus on real-world system concerns such as authentication, social logins, security
+        policies, and rate limiting — ensuring systems are not just functional, but reliable and production-ready.
       </p>
+
       <p>
-        I do not see engineering as just code delivery. For me, it is a craft with responsibility. Build with
-        precision. Communicate with clarity. Design with empathy for both users and developers. Leave systems more
-        stable, understandable, and future-ready than they were before. That is the standard I hold for my work, and
-        the direction I want Numerinus to represent.
+        I also take ownership beyond code. I have mentored developers, coordinated across teams, and led SDLC activities
+        to drive delivery from ambiguity to completion. My experience includes working closely with stakeholders,
+        handling evolving requirements, and contributing to technical decisions aligned with business outcomes.
       </p>
+
       <p>
-        I am also energized by leadership through execution: mentoring developers, improving engineering practices, and
-        helping teams move from ambiguity to shippable outcomes. The balance I value most is this: think strategically,
-        execute practically, and keep the product experience as strong as the technical foundation behind it.
+        In parallel, I build my own products. I am currently developing Numerinus — a high-performance .NET finance
+        library — along with a supporting storefront. This work reflects how I think: designing systems from first
+        principles, focusing on performance, API ergonomics, licensing, security, scalability, and long-term
+        maintainability.
+      </p>
+
+      <p>
+        My perspective is shaped not only by engineering but also by my background in entrepreneurship and management.
+        That combination helps me approach problems holistically — balancing technical depth with product thinking,
+        execution clarity, and ownership.
+      </p>
+
+      <p>
+        I see engineering as a craft with responsibility: build with precision, communicate with clarity, and leave
+        systems more stable and understandable than they were before. That is the standard I work by, and the direction
+        I am continuously growing toward.
       </p>
     </div>
+
     <div class="mt-8 flex flex-nowrap gap-2.5 overflow-x-auto pb-1">
       <Button href="/Sunil-Chaware-CV.pdf" label="Download CV" variant="ghost" newTab={true} className="w-40" icon="download" />
       <Button
@@ -142,7 +159,8 @@ const skillGroups = [
         <p class="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-zinc-500">Capability stack</p>
         <h2 class="mt-2 text-2xl font-semibold md:text-[1.65rem]">Technical Skills</h2>
         <p class="mt-3 text-sm leading-relaxed text-zinc-500 md:text-[0.95rem]">
-          A concise map of the technologies, platforms, and patterns I use to design and ship production systems.
+          A concise map of the technologies, platforms, and patterns I use to design, build, secure, and ship
+          production systems.
         </p>
       </div>
       <p class="shrink-0 font-mono text-xs text-zinc-600 md:text-right">
@@ -207,18 +225,44 @@ const skillGroups = [
   <section id="how-i-work" class="mt-10 glass-card p-7 md:p-10">
     <h2 class="text-2xl font-semibold">How I Work</h2>
     <ul class="mt-5 space-y-3 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
-      <li><span class="text-zinc-200">Think in systems:</span> understand constraints first, then design for long-term maintainability.</li>
-      <li><span class="text-zinc-200">Ship iteratively:</span> reduce risk through smaller releases and faster feedback loops.</li>
-      <li><span class="text-zinc-200">Lead from the code:</span> align teams by pairing technical depth with delivery clarity.</li>
+      <li>
+        <span class="text-zinc-200">Think in systems:</span> understand constraints, dependencies, bottlenecks, and
+        trade-offs before jumping to implementation.
+      </li>
+      <li>
+        <span class="text-zinc-200">Design for production:</span> build with performance, security, observability, and
+        maintainability in mind from the beginning.
+      </li>
+      <li>
+        <span class="text-zinc-200">Ship iteratively:</span> reduce risk through smaller releases, clear feedback loops,
+        and practical delivery milestones.
+      </li>
+      <li>
+        <span class="text-zinc-200">Lead from ownership:</span> align people, code, and decisions so teams can move from
+        ambiguity to shippable outcomes.
+      </li>
     </ul>
   </section>
 
   <section id="what-i-value" class="mt-10 glass-card p-7 md:p-10">
     <h2 class="text-2xl font-semibold">What I Value</h2>
     <ul class="mt-5 space-y-3 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]">
-      <li><span class="text-zinc-200">Clarity over noise:</span> simple, explicit systems beat clever but fragile complexity.</li>
-      <li><span class="text-zinc-200">Reliability over hype:</span> tools should perform consistently in production.</li>
-      <li><span class="text-zinc-200">Ownership over motion:</span> outcomes matter more than activity.</li>
+      <li>
+        <span class="text-zinc-200">Clarity over noise:</span> simple, explicit systems beat clever but fragile
+        complexity.
+      </li>
+      <li>
+        <span class="text-zinc-200">Reliability over hype:</span> tools and architectures should prove themselves in
+        production, not just in demos.
+      </li>
+      <li>
+        <span class="text-zinc-200">Ownership over motion:</span> outcomes matter more than activity, and delivery means
+        closing the loop.
+      </li>
+      <li>
+        <span class="text-zinc-200">Practical depth:</span> strong engineering should connect technical decisions with
+        user value, business context, and long-term maintainability.
+      </li>
     </ul>
   </section>
 </MainLayout>
