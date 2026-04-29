@@ -238,6 +238,26 @@ body::before {
     @apply font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/90;
   }
 
+  .page-title {
+    @apply text-4xl font-semibold leading-tight text-zinc-50 md:text-[2.85rem];
+  }
+
+  .hero-title {
+    @apply text-4xl font-semibold leading-tight text-zinc-50 md:text-[3.45rem];
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold leading-tight text-zinc-50 md:text-[1.65rem];
+  }
+
+  .panel-title {
+    @apply text-lg font-semibold leading-tight text-zinc-50;
+  }
+
+  .summary-title {
+    @apply text-2xl font-semibold leading-tight text-zinc-100;
+  }
+
   .section-copy {
     @apply max-w-3xl text-base leading-relaxed text-zinc-300 md:text-[1.02rem];
   }

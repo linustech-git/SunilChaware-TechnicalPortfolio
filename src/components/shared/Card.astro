@@ -9,7 +9,7 @@ const { title, description, className = "" } = Astro.props as Props;
 ---
 
 <article class={`glass-card p-5 transition duration-300 hover:border-cyan-200/25 hover:bg-white/[0.052] ${className}`}>
-  {title && <h3 class="relative text-lg font-semibold text-zinc-50">{title}</h3>}
+  {title && <h3 class="panel-title relative">{title}</h3>}
   {description && <p class="relative mt-2 text-sm leading-relaxed text-zinc-400">{description}</p>}
   <div class="relative mt-5">
     <slot />

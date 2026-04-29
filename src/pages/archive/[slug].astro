@@ -29,7 +29,7 @@ const { Content } = await render(entry);
 >
   <article id="article" class="glass-card content-prose p-7 md:p-9">
     <p class="premium-kicker">{entry.data.publishedAt.toDateString()}</p>
-    <h1 class="mt-4 max-w-4xl text-4xl font-semibold text-zinc-50 md:text-[2.85rem]">{entry.data.title}</h1>
+    <h1 class="page-title mt-4 max-w-4xl">{entry.data.title}</h1>
     <p class="mt-4 max-w-3xl text-zinc-300">{entry.data.description}</p>
     <div class="mt-8 rounded-lg border border-white/10 bg-white/[0.028] p-5 md:p-7">
       <Content />
