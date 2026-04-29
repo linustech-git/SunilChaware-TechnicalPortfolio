@@ -147,7 +147,7 @@ const skillGroups = [
         </p>
       </div>
       <p class="shrink-0 font-mono text-xs text-zinc-600 md:text-right">
-        <span class="text-orange-400/80">{String(skillGroups.length).padStart(2, "0")}</span>
+        <span class="text-cyan-200/80">{String(skillGroups.length).padStart(2, "0")}</span>
         <span class="text-zinc-600"> / </span>
         <span class="text-zinc-500">domains</span>
       </p>
@@ -156,7 +156,7 @@ const skillGroups = [
     <dl class="mt-8 grid gap-5 sm:grid-cols-2">
       {
         skillGroups.map((group, idx) => (
-          <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/45 p-5 shadow-xl shadow-black/10 transition hover:border-orange-300/25 hover:bg-slate-950/65">
+          <div class="group relative overflow-hidden rounded-lg border border-white/10 bg-zinc-950/55 p-5 shadow-xl shadow-black/10 transition hover:border-cyan-200/25 hover:bg-zinc-950/75">
             <img
               src={group.bg}
               alt=""
@@ -167,16 +167,16 @@ const skillGroups = [
               decoding="async"
             />
             <div
-              class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-slate-950 from-[18%] via-slate-950/70 via-[48%] to-transparent"
+              class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-zinc-950 from-[18%] via-zinc-950/70 via-[48%] to-transparent"
               aria-hidden="true"
             />
             <span
-              class="pointer-events-none absolute left-0 top-5 z-[2] h-12 w-0.5 bg-gradient-to-b from-orange-300/90 to-orange-400/20 opacity-90 transition group-hover:from-orange-200 group-hover:to-orange-400/30"
+              class="pointer-events-none absolute left-0 top-5 z-[2] h-12 w-0.5 bg-gradient-to-b from-cyan-200/90 to-cyan-300/20 opacity-90 transition group-hover:from-white group-hover:to-cyan-300/30"
               aria-hidden="true"
             />
             <div class="relative z-[3] pl-3">
               <dt class="flex items-baseline justify-between gap-3">
-                <span class="font-mono text-sm font-semibold uppercase tracking-[0.14em] text-orange-400/90 md:text-base">
+                <span class="font-mono text-sm font-semibold uppercase tracking-[0.14em] text-cyan-200/90 md:text-base">
                   {group.label}
                 </span>
                 <span class="font-mono text-xs text-zinc-600 tabular-nums md:text-sm">
@@ -200,21 +200,5 @@ const skillGroups = [
     </dl>
   </section>
 
-  <section id="how-i-work" class="mt-10 glass-card p-7 md:p-10">
-    <h2 class="text-2xl font-semibold">How I Work</h2>
-    <ul class="premium-list mt-5">
-      <li><span class="text-zinc-200">Think in systems:</span> understand constraints first, then design for long-term maintainability.</li>
-      <li><span class="text-zinc-200">Ship iteratively:</span> reduce risk through smaller releases and faster feedback loops.</li>
-      <li><span class="text-zinc-200">Lead from the code:</span> align teams by pairing technical depth with delivery clarity.</li>
-    </ul>
-  </section>
 
-  <section id="what-i-value" class="mt-10 glass-card p-7 md:p-10">
-    <h2 class="text-2xl font-semibold">What I Value</h2>
-    <ul class="premium-list mt-5">
-      <li><span class="text-zinc-200">Clarity over noise:</span> simple, explicit systems beat clever but fragile complexity.</li>
-      <li><span class="text-zinc-200">Reliability over hype:</span> tools should perform consistently in production.</li>
-      <li><span class="text-zinc-200">Ownership over motion:</span> outcomes matter more than activity.</li>
-    </ul>
-  </section>
 </MainLayout>

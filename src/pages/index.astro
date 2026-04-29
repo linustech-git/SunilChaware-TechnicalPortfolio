@@ -7,7 +7,7 @@ const toc = [
   { label: "Intro", href: "#intro" },
   { label: "What I Optimize For", href: "#optimize-for" },
   { label: "Work Snapshot", href: "#work-snapshot" },
-  { label: "Current Priorities", href: "#current-priorities" },
+  { label: "Contact", href: "#contact" },
 ];
 ---
 
@@ -62,7 +62,7 @@ const toc = [
       </div>
 
       <div class="space-y-4">
-        <div class="rounded-2xl border border-white/10 bg-slate-950/60 p-5 shadow-2xl shadow-black/20">
+        <div class="rounded-lg border border-white/10 bg-zinc-950/70 p-5 shadow-2xl shadow-black/20">
           <p class="premium-kicker">Primary Build</p>
           <p class="mt-3 text-2xl font-semibold text-zinc-50">Numerinus</p>
           <p class="mt-3 text-sm leading-relaxed text-zinc-400">
@@ -96,44 +96,24 @@ const toc = [
     </ul>
   </section>
 
-  <section id="work-snapshot" class="mt-10 grid gap-6 md:grid-cols-2">
-    <Card title="Current Focus" description="Numerinus and platform foundations">
-      <div class="flex flex-col gap-4 md:flex-row md:items-start">
-        <div class="w-full md:w-40 md:flex-shrink-0">
-          <img
-            src="/images/current-focus.svg"
-            alt="Current focus visual"
-            class="h-24 w-full rounded-lg border border-slate-800 object-cover md:h-28"
-          />
-        </div>
-        <p class="text-sm text-zinc-400">
-          API ergonomics, mathematical correctness, package design, and a storefront that makes adoption frictionless.
-        </p>
-      </div>
-    </Card>
-    <Card title="Engineering Style" description="How I execute">
-      <div class="flex flex-col gap-4 md:flex-row md:items-start">
-        <div class="w-full md:w-40 md:flex-shrink-0">
-          <img
-            src="/images/engineering-style.svg"
-            alt="Engineering style visual"
-            class="h-24 w-full rounded-lg border border-slate-800 object-cover md:h-28"
-          />
-        </div>
-        <p class="text-sm text-zinc-400">
-          Build with precision, communicate with clarity, and optimize for maintainability before complexity compounds.
-        </p>
-      </div>
-    </Card>
+  <section id="contact" class="mt-10 glass-card p-7 md:p-9">
+    <p class="premium-kicker">Contact</p>
+    <h2 class="mt-3 text-2xl font-semibold">Let&apos;s connect</h2>
+    <div class="mt-5 grid gap-3 sm:grid-cols-2">
+      <a
+        href="mailto:chawaresunil1987@gmail.com"
+        class="rounded-lg border border-white/10 bg-white/[0.028] px-4 py-3 font-mono text-sm text-zinc-200 transition hover:border-cyan-200/35 hover:text-cyan-100"
+      >
+        chawaresunil1987@gmail.com
+      </a>
+      <a
+        href="tel:+919860097922"
+        class="rounded-lg border border-white/10 bg-white/[0.028] px-4 py-3 font-mono text-sm text-zinc-200 transition hover:border-cyan-200/35 hover:text-cyan-100"
+      >
+        +91 9860097922
+      </a>
+    </div>
   </section>
 
-  <section id="current-priorities" class="mt-10 glass-card p-7 md:p-9">
-    <h2 class="text-2xl font-semibold">Current Priorities</h2>
-    <ul class="premium-list mt-5">
-      <li><span class="text-zinc-200">Numerinus Store:</span> productizing .NET numerical libraries with clear adoption pathways.</li>
-      <li><span class="text-zinc-200">Core engineering:</span> package quality, release discipline, and performance-first design.</li>
-      <li><span class="text-zinc-200">Knowledge system:</span> publishing technical notes to document decisions and trade-offs.</li>
-    </ul>
-  </section>
 
 </MainLayout>

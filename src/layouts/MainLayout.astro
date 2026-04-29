@@ -44,15 +44,14 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
     />
   </head>
   <body class="min-h-screen text-zinc-100">
-    <div id="mouse-glow" aria-hidden="true"></div>
     <div class="relative z-10 mx-auto max-w-[1440px] px-4 py-5 md:px-7 lg:px-10">
-      <header class="sticky top-4 z-20 mb-8 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-xl">
+      <header class="sticky top-4 z-20 mb-8 rounded-lg border border-white/10 bg-zinc-950/75 px-4 py-3 shadow-2xl shadow-black/25 backdrop-blur-xl">
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <a href="/" class="group inline-flex items-center gap-3 text-sm font-semibold tracking-wide text-zinc-100 hover:text-orange-200 md:text-base">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl border border-orange-300/30 bg-orange-400/15 font-mono text-sm text-orange-200 shadow-lg shadow-orange-950/20">SC</span>
+          <a href="/" class="group inline-flex items-center gap-3 text-sm font-semibold tracking-wide text-zinc-100 hover:text-cyan-100 md:text-base">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-200/30 bg-cyan-200/10 font-mono text-sm text-cyan-100 shadow-lg shadow-cyan-950/20">SC</span>
             <span class="leading-tight">
               <span class="block">Sunil Chaware</span>
-              <span class="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 group-hover:text-orange-300/80">Technical Portfolio</span>
+              <span class="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-zinc-500 group-hover:text-cyan-200/80">Technical Portfolio</span>
             </span>
           </a>
           <div class="relative flex items-center gap-3">
@@ -61,7 +60,7 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
               type="button"
               aria-expanded="false"
               aria-controls="site-navigation"
-              class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-200 transition hover:border-orange-400/50 hover:text-orange-200 md:hidden"
+              class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-zinc-200 transition hover:border-cyan-300/50 hover:text-cyan-100 md:hidden"
             >
               <span class="sr-only">Toggle navigation</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
@@ -71,7 +70,7 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
 
             <nav
               id="site-navigation"
-              class="hidden min-w-full rounded-2xl border border-white/10 bg-slate-950/95 p-4 shadow-2xl backdrop-blur-xl md:flex md:min-w-0 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+              class="hidden min-w-full rounded-lg border border-white/10 bg-zinc-950/95 p-4 shadow-2xl backdrop-blur-xl md:flex md:min-w-0 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none"
             >
               <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-1">
                 {navItems.map((item) => (
@@ -124,15 +123,6 @@ const isCurrent = (href: string) => (isPathCurrent(href) ? "nav-link nav-link-ac
       </div>
     </div>
     <script>
-      const glow = document.getElementById("mouse-glow");
-      if (glow) {
-        window.addEventListener("pointermove", (event) => {
-          const x = event.clientX - 90;
-          const y = event.clientY - 90;
-          glow.style.transform = `translate(${x}px, ${y}px)`;
-        });
-      }
-
       const navToggle = document.getElementById("nav-toggle");
       const siteNavigation = document.getElementById("site-navigation");
       if (navToggle && siteNavigation) {

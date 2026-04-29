@@ -10,7 +10,7 @@
   h5,
   h6 {
     color: #f8fafc;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 }
 
@@ -23,9 +23,10 @@ body {
   overflow-x: hidden;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at 18% 10%, rgba(245, 158, 11, 0.16), transparent 28rem),
-    radial-gradient(circle at 86% 6%, rgba(20, 184, 166, 0.12), transparent 24rem),
-    linear-gradient(135deg, #0f172a 0%, #171717 46%, #111827 100%);
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(135deg, #08090b 0%, #111113 48%, #0c1012 100%);
+  background-size: 46px 46px, 46px 46px, auto;
   color: #f8fafc;
   line-height: 1.6;
 }
@@ -74,21 +75,20 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 76%);
+  background:
+    linear-gradient(115deg, rgba(103, 232, 249, 0.08), transparent 22rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 18rem);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 70%);
 }
 
 ::selection {
-  background: rgba(245, 158, 11, 0.32);
-  color: #fff7ed;
+  background: rgba(103, 232, 249, 0.26);
+  color: #ecfeff;
 }
 
 @layer components {
   .glass-card {
-    @apply relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.055] shadow-2xl shadow-black/20 backdrop-blur-xl;
+    @apply relative overflow-hidden rounded-lg border border-white/10 bg-zinc-950/55 shadow-2xl shadow-black/25 backdrop-blur-xl;
   }
 
   .glass-card::before {
@@ -96,10 +96,8 @@ body::before {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 34%),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent 55%);
-    opacity: 0.75;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), transparent 8rem);
+    opacity: 0.65;
   }
 
   .glass-card::after {
@@ -109,8 +107,8 @@ body::before {
     right: 1.25rem;
     top: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.72), transparent);
-    opacity: 0.7;
+    background: linear-gradient(90deg, transparent, rgba(103, 232, 249, 0.72), rgba(245, 158, 11, 0.34), transparent);
+    opacity: 0.82;
   }
 
   .accent-card {
@@ -118,15 +116,15 @@ body::before {
   }
 
   .warning-accent {
-    box-shadow: inset 0 1px 0 rgba(245, 158, 11, 0.38);
+    box-shadow: inset 0 1px 0 rgba(103, 232, 249, 0.32);
   }
 
   .nav-link {
-    @apply rounded-full border border-transparent px-3 py-2 text-sm font-medium text-zinc-400 transition hover:border-white/10 hover:bg-white/5 hover:text-zinc-100;
+    @apply rounded-lg border border-transparent px-3 py-2 text-sm font-medium text-zinc-400 transition hover:border-white/10 hover:bg-white/5 hover:text-zinc-100;
   }
 
   .nav-link-active {
-    @apply border-orange-400/40 bg-orange-400/10 text-orange-200 shadow-lg shadow-orange-950/20;
+    @apply border-cyan-300/35 bg-cyan-300/10 text-cyan-100 shadow-lg shadow-cyan-950/20;
   }
 
   .toc-link {
@@ -134,11 +132,11 @@ body::before {
   }
 
   .toc-link-active {
-    @apply border-orange-400/30 bg-orange-400/10 text-orange-200;
+    @apply border-cyan-300/30 bg-cyan-300/10 text-cyan-100;
   }
 
   .step-link {
-    @apply flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-zinc-100;
+    @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-zinc-100;
   }
 
   .step-link-active {
@@ -150,8 +148,8 @@ body::before {
   }
 
   .step-dot-active {
-    @apply bg-orange-400;
-    box-shadow: 0 0 0 5px rgba(251, 146, 60, 0.12), 0 0 22px rgba(251, 146, 60, 0.35);
+    @apply bg-cyan-300;
+    box-shadow: 0 0 0 5px rgba(103, 232, 249, 0.10), 0 0 22px rgba(103, 232, 249, 0.25);
   }
 
   .step-rail {
@@ -202,7 +200,7 @@ body::before {
   }
 
   .terminal-window {
-    @apply relative overflow-hidden rounded-2xl border border-emerald-400/15 bg-slate-950/70 p-5 shadow-2xl shadow-emerald-950/20;
+    @apply relative overflow-hidden rounded-lg border border-cyan-300/15 bg-zinc-950/80 p-5 shadow-2xl shadow-black/25;
   }
 
   .terminal-window::before {
@@ -210,11 +208,11 @@ body::before {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(120deg, rgba(16, 185, 129, 0.10), transparent 45%);
+    background: linear-gradient(120deg, rgba(103, 232, 249, 0.08), transparent 45%);
   }
 
   .typing-line {
-    @apply relative whitespace-nowrap font-mono text-sm text-emerald-300;
+    @apply relative whitespace-nowrap font-mono text-sm text-cyan-200;
   }
 
   .meta-label {
@@ -233,11 +231,11 @@ body::before {
   }
 
   .content-prose code {
-    @apply rounded bg-white/10 px-1 py-0.5 font-mono text-orange-300;
+    @apply rounded bg-white/10 px-1 py-0.5 font-mono text-cyan-200;
   }
 
   .premium-kicker {
-    @apply font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-orange-300/90;
+    @apply font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/90;
   }
 
   .section-copy {
@@ -249,20 +247,8 @@ body::before {
   }
 
   .premium-list li {
-    @apply rounded-xl border border-white/10 bg-white/[0.035] px-4 py-3;
+    @apply rounded-lg border border-white/10 bg-white/[0.028] px-4 py-3;
   }
 }
 
-#mouse-glow {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 180px;
-  height: 180px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.10) 0%, rgba(20, 184, 166, 0.04) 42%, rgba(0, 0, 0, 0) 76%);
-  transform: translate(-9999px, -9999px);
-  pointer-events: none;
-  z-index: 0;
-}
 
