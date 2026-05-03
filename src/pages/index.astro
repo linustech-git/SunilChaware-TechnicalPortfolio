@@ -1,47 +1,113 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/shared/Button.astro";
-import Card from "../components/shared/Card.astro";
 
 const toc = [
-  { label: "Intro", href: "#intro" },
+  { label: "About", href: "#about" },
   { label: "What I Optimize For", href: "#optimize-for" },
-  { label: "Work Snapshot", href: "#work-snapshot" },
+  { label: "Technical Skills", href: "#technical-skills" },
   { label: "Contact", href: "#contact" },
+];
+
+const skillGroups = [
+  {
+    label: "Frontend",
+    bg: "/images/skills/frontend.svg",
+    items: ["React", "Angular", "JavaScript", "TypeScript", "Astro"],
+  },
+  {
+    label: "Backend",
+    bg: "/images/skills/backend.svg",
+    items: ["C#", ".NET Core", "Web API", "Minimum APIs", "LINQ", "Dapper", "Entity Framework"],
+  },
+  {
+    label: "Database",
+    bg: "/images/skills/database.svg",
+    items: ["SQL Server", "Evolve DB", "PostgreSQL"],
+  },
+  {
+    label: "Cloud & DevOps",
+    bg: "/images/skills/cloud-devops.svg",
+    items: [
+      "Azure DevOps",
+      "Azure Portal (AZ-900 certified)",
+      "CI/CD Pipelines",
+      "Kiuwan",
+      "Docker",
+      "Kubernetes",
+      "Railway",
+      "Github Actions",
+    ],
+  },
+  {
+    label: "Architecture",
+    bg: "/images/skills/architecture.svg",
+    items: ["Microservices", "REST APIs", "Event-Driven Architecture", "CQRS", "Design Patterns"],
+  },
+  {
+    label: "Artificial intelligence",
+    bg: "/images/skills/ai.svg",
+    items: ["AI agent integration", "RAG", "MCP", "Langchain", "Langgraph", "Langsmith"],
+  },
+  {
+    label: "Security",
+    bg: "/images/skills/security.svg",
+    items: ["SSO", "MFA", "Machine fingerprinting", "RBAC", "OAuth 2.0", "Rate Limiting"],
+  },
+  {
+    label: "Tools",
+    bg: "/images/skills/tools.svg",
+    items: [
+      "VS Code",
+      "Visual Studio",
+      "Cursor",
+      "Postman",
+      "Swagger",
+      "Git",
+      "GitHub Copilot",
+      "Azure Function",
+      "Service Bus",
+      "Event Hub",
+    ],
+  },
 ];
 ---
 
 <MainLayout
   title="Sunil Chaware - Technical Portfolio"
-  description="Senior full stack software engineer - product expert"
+  description="About Sunil Chaware: full stack software consultant, product builder, and lifelong learner."
   toc={toc}
 >
-  <section id="intro" class="glass-card p-7 md:p-10">
+  <section id="about" class="glass-card p-7 md:p-10">
     <div class="grid gap-9 xl:grid-cols-[minmax(0,1fr)_320px] xl:items-start">
       <div>
-        <p class="premium-kicker">Senior Developer / Technical Leader</p>
-        <h1 class="hero-title mt-4 max-w-4xl">
-          Building reliable product systems with architectural precision.
+        <p class="premium-kicker">About Sunil</p>
+        <h1 class="page-title mt-4 max-w-4xl">
+          I design and build systems where deep engineering meets practical value.
         </h1>
-        <div class="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-zinc-300 md:text-[1.04rem]">
+
+        <div class="mt-6 max-w-2xl space-y-5 text-base leading-relaxed text-zinc-400 md:text-[1.02rem]" style="text-align: justify;">
           <p>
-            I am Sunil Chaware. I am a Senior Developer and technical leader who believes that great products are built where
-            robust architecture meets an uncompromising developer experience. My career has been spent leading teams and
-            shipping systems that solve real-world problems with pragmatic, high-performance code.
+            I am Sunil, a full stack software consultant focused on building production-ready systems where deep engineering
+            meets practical value. My work spans end-to-end system design, repository setup, code quality, database decisions,
+            and cross-domain architecture.
           </p>
+
           <p>
-            I lead with a "tech-first" mindset-balancing the macro-view of leadership with the micro-precision of a builder.
-            This space is my technical whitepaper: a transparent look at my decision-making process, the trade-offs I navigate
-            under real-world constraints, and the evolution of my current primary project, Numerinus.
+            I work with distributed systems, event-driven architecture, .NET, Angular, SQL Server, PostgreSQL, and Azure
+            services including Functions, Service Bus, and Event Hub. Alongside development, I focus on authentication,
+            security, rate limiting, reliability, and the operational details that make software ready for real users.
           </p>
+
           <p>
-            Over the years, I have worked across EdTech, finance, and enterprise platforms, with a strong focus on system
-            reliability, performance tuning, and secure product delivery.
+            Beyond code, I mentor developers, coordinate across teams, and help move delivery from ambiguity to completion.
+            I am also building Numerinus, a high-performance .NET finance library, shaped by product thinking, performance,
+            API ergonomics, security, scalability, and long-term maintainability.
           </p>
         </div>
+
         <div class="mt-8 flex flex-wrap gap-3">
           <Button href="/workspace" label="Workspace" className="w-40" />
-          <Button href="/Sunil-Chaware-CV.pdf" label="Download CV" variant="ghost" newTab={true} className="w-40" icon="download" />
           <Button
             href="https://www.linkedin.com/in/sunil-chaware-9035a646/"
             label="LinkedIn"
@@ -56,6 +122,14 @@ const toc = [
             variant="ghost"
             newTab={true}
             icon="github"
+            className="w-40"
+          />
+          <Button
+            href="https://medium.com/@linustech"
+            label="Medium"
+            variant="ghost"
+            newTab={true}
+            icon="medium"
             className="w-40"
           />
         </div>
@@ -77,13 +151,6 @@ const toc = [
         </div>
       </div>
     </div>
-  <!--  <div class="mt-8 max-w-2xl">
-      <img
-        src="/images/tech-dev-banner.png"
-        alt="Tech Dev visual banner"
-        class="w-full rounded-lg border border-zinc-800 object-cover"
-      />
-    </div>-->
   </section>
 
   <section id="optimize-for" class="mt-10 glass-card p-7 md:p-9">
@@ -94,6 +161,75 @@ const toc = [
       <li><span class="text-zinc-200">Developer experience:</span> APIs and workflows that reduce friction and increase confidence.</li>
       <li><span class="text-zinc-200">Business alignment:</span> technical decisions mapped to measurable product outcomes.</li>
     </ul>
+  </section>
+
+  <section id="technical-skills" class="mt-10 glass-card p-7 md:p-10">
+    <div class="flex flex-col gap-4 border-b border-zinc-800/80 pb-6 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-2xl">
+        <p class="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-zinc-500">Capability stack</p>
+        <h2 class="section-title mt-2">Technical Skills</h2>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-500 md:text-[0.95rem]">
+          A concise map of the technologies, platforms, and patterns I use to design, build, secure, and ship
+          production systems.
+        </p>
+      </div>
+      <p class="shrink-0 font-mono text-xs text-zinc-600 md:text-right">
+        <span class="text-cyan-200/80">{String(skillGroups.length).padStart(2, "0")}</span>
+        <span class="text-zinc-600"> / </span>
+        <span class="text-zinc-500">domains</span>
+      </p>
+    </div>
+
+    <dl class="mt-8 grid gap-4 sm:grid-cols-2 lg:gap-5">
+      {
+        skillGroups.map((group, idx) => (
+          <div class="group relative overflow-hidden rounded-lg border border-white/10 bg-zinc-950/55 p-5 shadow-xl shadow-black/10 transition hover:border-cyan-200/25 hover:bg-zinc-950/75">
+            <img
+              src={group.bg}
+              alt=""
+              width="400"
+              height="240"
+              class="pointer-events-none absolute inset-0 z-0 h-full w-full object-contain object-right p-1 opacity-[0.82] brightness-125 saturate-110 transition-opacity duration-300 group-hover:opacity-[0.95] md:opacity-[0.72] md:group-hover:opacity-[0.9]"
+              loading="lazy"
+              decoding="async"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-zinc-950 from-[18%] via-zinc-950/70 via-[48%] to-transparent"
+              aria-hidden="true"
+            />
+            <span
+              class="pointer-events-none absolute left-0 top-5 z-[2] h-12 w-0.5 bg-gradient-to-b from-cyan-200/90 to-cyan-300/20 opacity-90 transition group-hover:from-white group-hover:to-cyan-300/30"
+              aria-hidden="true"
+            />
+            <div class="relative z-[3] pl-3">
+              <dt class="flex items-baseline justify-between gap-3">
+                <span class="font-mono text-sm font-semibold uppercase tracking-[0.14em] text-cyan-200/90 md:text-base">
+                  {group.label}
+                </span>
+                <span class="font-mono text-xs text-zinc-600 tabular-nums md:text-sm">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+              </dt>
+              <dd class="mt-3 text-sm leading-relaxed text-zinc-400 md:text-[0.95rem]">
+                <span class="sr-only">{group.items.join(", ")}</span>
+                <span aria-hidden="true" class="flex flex-wrap gap-x-1.5 gap-y-2">
+                  {group.items.map((item, i) => (
+                    <>
+                      {i > 0 ? (
+                        <span class="select-none text-zinc-600" aria-hidden="true">
+                          -
+                        </span>
+                      ) : null}
+                      <span class="text-zinc-300">{item}</span>
+                    </>
+                  ))}
+                </span>
+              </dd>
+            </div>
+          </div>
+        ))
+      }
+    </dl>
   </section>
 
   <section id="contact" class="mt-10 glass-card p-7 md:p-9">
