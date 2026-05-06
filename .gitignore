@@ -11,3 +11,9 @@ astro-dev.*.log
 /.vs/CopilotSnapshots/4B8C4A0D91707C4DA27BC39DBC714D00
 /.vs/SunilChaware-TechnicalPortfolio/CopilotIndices/18.6.39538.10442
 /.vs/SunilChaware-TechnicalPortfolio.slnx
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
