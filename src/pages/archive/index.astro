@@ -6,6 +6,11 @@ const allEntries = await getCollection("archive", ({ data }) => !data.draft);
 const entries = allEntries.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 const mediumArticles = [
   {
+    title: "Modernizing the financial calculations: Inside the Numerinus Ecosystem",
+    date: "May 10, 2026",
+    href: "https://medium.com/@linustech/modernizing-the-financial-calculations-inside-the-numerinus-ecosystem-f9d4a408da91",
+    checksum: "md.cbe454",
+  }, {
     title: "Prododo: Your Product Management with Dodo Payments Made Easy",
     date: "Apr 13, 2026",
     href: "https://medium.com/@linustech/prododo-your-product-management-with-dodo-payments-made-easy-cbe454f7095d",
