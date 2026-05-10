@@ -2,6 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Keyframes ──────────────────────────────────────────────── */
+@keyframes aurora-drift {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.55; }
+  33%  { transform: translate(6%, 4%) scale(1.07); opacity: 0.7; }
+  66%  { transform: translate(-4%, 8%) scale(0.95); opacity: 0.5; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+}
+
+@keyframes aurora-drift-b {
+  0%   { transform: translate(0, 0) scale(1.05); opacity: 0.4; }
+  50%  { transform: translate(-8%, -5%) scale(0.93); opacity: 0.65; }
+  100% { transform: translate(0, 0) scale(1.05); opacity: 0.4; }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(103,232,249,0.55); }
+  60%       { box-shadow: 0 0 0 6px rgba(103,232,249,0); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes border-spin {
+  from { --border-angle: 0turn; }
+  to   { --border-angle: 1turn; }
+}
+
+@keyframes scanline-scroll {
+  from { background-position: 0 0; }
+  to   { background-position: 0 100%; }
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
 @layer base {
   h1,
   h2,
@@ -13,6 +53,12 @@
     letter-spacing: 0;
   }
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #08090b; }
+::-webkit-scrollbar-thumb { background: rgba(103,232,249,0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(103,232,249,0.5); }
 
 html,
 body {
@@ -70,15 +116,38 @@ body {
   min-height: 100vh;
 }
 
+/* Animated aurora blobs */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
+  z-index: 0;
   background:
-    linear-gradient(115deg, rgba(103, 232, 249, 0.08), transparent 22rem),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 18rem);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 70%);
+    radial-gradient(ellipse 70% 55% at 15% 8%, rgba(103,232,249,0.13) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 82% 12%, rgba(139,92,246,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 35% at 50% 90%, rgba(245,158,11,0.07) 0%, transparent 55%),
+    linear-gradient(115deg, rgba(103, 232, 249, 0.06), transparent 22rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 18rem);
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+
+/* Scanline overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  background-size: 100% 4px;
+  animation: scanline-scroll 12s linear infinite;
 }
 
 ::selection {
@@ -89,6 +158,11 @@ body::before {
 @layer components {
   .glass-card {
     @apply relative overflow-hidden rounded-lg border border-white/10 bg-zinc-950/55 shadow-2xl shadow-black/25 backdrop-blur-xl;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 0 0 1px rgba(103,232,249,0.12), 0 25px 50px -12px rgba(0,0,0,0.6), 0 0 40px -10px rgba(103,232,249,0.08);
   }
 
   .glass-card::before {
@@ -268,7 +342,52 @@ body::before {
 
   .premium-list li {
     @apply rounded-lg border border-white/10 bg-white/[0.028] px-4 py-3;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .premium-list li:hover {
+    border-color: rgba(103,232,249,0.2);
+    background-color: rgba(103,232,249,0.04);
+  }
+
+  /* ── New premium utilities ───────────────────────────── */
+
+  .status-dot {
+    @apply inline-block h-2 w-2 rounded-full bg-emerald-400;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  .blink-cursor::after {
+    content: "|";
+    animation: blink-cursor 1s step-end infinite;
+    color: rgba(103,232,249,0.9);
+  }
+
+  .fade-up {
+    animation: fade-up 0.6s ease both;
+  }
+
+  .shimmer-border {
+    position: relative;
+  }
+
+  .shimmer-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(var(--border-angle, 0turn), rgba(103,232,249,0.6), rgba(139,92,246,0.3) 50%, rgba(103,232,249,0.6));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: border-spin 4s linear infinite;
+  }
+
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0turn;
   }
 }
-
-
